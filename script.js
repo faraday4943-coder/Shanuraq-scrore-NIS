@@ -189,19 +189,19 @@ renderRating();
 
 function renderRating(){
 
-const container=document.getElementById("ratingList");
+const container = document.getElementById("ratingList");
 
-container.innerHTML="";
+container.innerHTML = "";
 
-let sorted=[...shanyraqs];
+let sorted = [...shanyraqs];
 
-if(currentFilter==="academy")
+if(currentFilter === "academy")
 sorted.sort((a,b)=>b.academy-a.academy);
 
-else if(currentFilter==="sport")
+else if(currentFilter === "sport")
 sorted.sort((a,b)=>b.sport-a.sport);
 
-else if(currentFilter==="social")
+else if(currentFilter === "social")
 sorted.sort((a,b)=>b.social-a.social);
 
 else
@@ -209,7 +209,9 @@ sorted.sort((a,b)=>b.score-a.score);
 
 sorted.slice(0,5).forEach((s,index)=>{
 
-let medal="";
+let realIndex = shanyraqs.indexOf(s);
+
+let medal = "";
 
 if(index===0) medal="🥇";
 if(index===1) medal="🥈";
@@ -217,9 +219,9 @@ if(index===2) medal="🥉";
 
 let leaderClass = index === 0 ? "leader" : "";
 
-container.innerHTML+=`
+container.innerHTML += `
 
-<div class="card ${leaderClass}" onclick="openProfile(${index})">
+<div class="card ${leaderClass}" onclick="openProfile(${realIndex})">
 
 <h3>${medal} ${index+1}. ${s.name}</h3>
 
@@ -232,13 +234,13 @@ container.innerHTML+=`
 `;
 
 });
-}
 
+}
 function openProfile(i){
 
-const s=shanyraqs[i];
+const s = shanyraqs[i];
 
-document.getElementById("profileContent").innerHTML=`
+document.getElementById("profileContent").innerHTML = `
 
 <div class="card">
 
@@ -263,7 +265,6 @@ document.getElementById("profileContent").innerHTML=`
 openTab("profile");
 
 }
-
 document.getElementById("searchInput").addEventListener("input",function(){
 
 const value=this.value.toLowerCase();
@@ -274,7 +275,9 @@ const container=document.getElementById("searchResults");
 
 container.innerHTML="";
 
-results.forEach((s,i)=>{
+results.forEach((s)=>{
+
+let i = shanyraqs.indexOf(s);
 
 container.innerHTML+=`
 
@@ -289,7 +292,6 @@ container.innerHTML+=`
 `;
 
 });
-
 });
 
 renderRating();
