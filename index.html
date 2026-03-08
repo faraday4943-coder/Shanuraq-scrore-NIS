@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shanyraq Score</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<header>
+
+<div>
+<h1>Shanyraq Score</h1>
+<p class="subtitle">Лидеры по категориям</p>
+</div>
+</div>
+
+<nav>
+
+<button onclick="openTab('rating')">📊 Рейтинг</button>
+<button onclick="openTab('events')">🎬 События</button>
+<button onclick="openTab('prizes')">🏆 Призы</button>
+<button onclick="openTab('search')">🔍 Поиск</button>
+
+</nav>
+
+</header>
+
+<main>
+
+<section id="rating" class="tab active">
+
+<div class="filters">
+
+<button onclick="setFilter('all')" class="filter active">🏆 Общий</button>
+<button onclick="setFilter('academy')" class="filter">📚 Академия</button>
+<button onclick="setFilter('sport')" class="filter">⚽ Спорт</button>
+<button onclick="setFilter('social')" class="filter">🤝 Социальная</button>
+
+</div>
+
+<div id="ratingList" class="cards"></div>
+
+</section>
+
+<section id="events" class="tab">
+
+<h2>🔥 Последние события</h2>
+
+<div class="events">
+
+<div class="event">
+<img src="https://picsum.photos/600/300">
+<p>🏆 Победа в олимпиаде по математике</p>
+</div>
+
+<div class="event">
+<img src="https://picsum.photos/600/301">
+<p>⚽ Победа школьной команды</p>
+</div>
+
+<div class="event">
+<img src="https://picsum.photos/600/302">
+<p>🤝 Волонтёрская акция</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="prizes" class="tab">
+
+<h2>🏆 Призы</h2>
+
+<div class="prize">✈ Образовательная поездка</div>
+<div class="prize">🥇 Кубок года</div>
+<div class="prize">🎓 Академическая поддержка</div>
+
+</section>
+
+<section id="search" class="tab">
+
+<input id="searchInput" placeholder="Введите название шанырака">
+
+<div id="searchResults"></div>
+
+</section>
+
+<section id="profile" class="tab">
+
+<div id="profileContent"></div>
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

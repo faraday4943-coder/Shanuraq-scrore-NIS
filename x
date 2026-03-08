@@ -1,0 +1,8 @@
+shanyraq-score
+│
+├── index.html
+├── style.css
+├── script.js
+│
+└── assets
+      └── nis-logo.png
